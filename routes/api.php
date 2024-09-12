@@ -6,9 +6,9 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\HandleExpiredToken;
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
+// Route::get('/user', function (Request $request) {
+//     return $request->user();
+// })->middleware('auth:sanctum');
 
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/refresh-token', [AuthController::class, 'refresh']);

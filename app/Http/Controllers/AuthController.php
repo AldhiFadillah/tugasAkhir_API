@@ -63,6 +63,8 @@ class AuthController extends Controller
             return response()->json(['error' => 'Refresh Token Kadaluarsa'], 401);
         } catch (JWTException $e) {
             return response()->json(['error' => 'Tidak dapat memberikan Token baru'], 500);
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Tidak dapat memberikan Token baru'], 500);
         }
 
         return response()->json([
