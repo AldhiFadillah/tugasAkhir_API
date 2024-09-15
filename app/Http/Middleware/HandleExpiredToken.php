@@ -12,7 +12,7 @@ class HandleExpiredToken
     public function handle($request, Closure $next)
     {
         try {
-            if (! $user = Auth::guard('api')->user()) {
+            if (!Auth::guard('api')->user()) {
                 return response()->json(['success' => false, 'message' => 'Token not provided'], 401);
             }
         } catch (TokenExpiredException $e) {

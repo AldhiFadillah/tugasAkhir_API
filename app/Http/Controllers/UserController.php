@@ -11,7 +11,7 @@ use Faker\Factory as Faker;
 class UserController extends Controller
 {
     public function dataUser(){
-        $users = User::all();
+        $users = User::where('role', 'user')->get();
         return new UserResource(true, 'List All User', true, $users);
     }
 
